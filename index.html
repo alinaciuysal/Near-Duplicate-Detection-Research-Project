@@ -83,6 +83,11 @@ It is stated that, “overlap of WordNet concepts” is a good criterion to dete
 </p>
 
 <p><a href="http://ir.cs.georgetown.edu/publications/downloads/p171-chowdhury.pdf">Collection Statistics for Fast Duplicate Document Detection</a></p>
+<p>
+  If the similarity measure of a document to the other is high, they are considered as similar documents. The approach of using the document as a query is infeasible for large collections because each document must be queried against the entire collection. Idf method was used for several algorithms in the past to weight which terms should be used for original query/document. According to the authors, this approach is also not feasible for large documents because of I/O costs to retrieve all documents for the posting list to be analysed. Therefore, they developed the I-Match algorithm to eliminate I/O costs and finding duplicate documents in a more efficient way.
+  I-Match uses collection statistics to identify which terms should be used as a basis for comparison of the documents using the inversed document frequency of each term in order to determine the usefulness of these terms.  Their approach hinges on the premise that removal of very infrequent terms or very common terms results in good document representations for identifying duplicates.
+  I-Match yields a higher percentage of detection than Digital Syntactic Clustering (DSC) or DSC super shingle approaches. It also yields a smaller number of document clusters than any of the shingling techniques. Besides, no false positives are detected with the I-Match algorithm. 
+</p>
 
 <p><a href="http://acberg.com/bigdata/papers/broder_shingling.pdf">Syntactic Clustering of the Web</a></p>
 
