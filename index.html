@@ -64,7 +64,14 @@ It is stated that, “overlap of WordNet concepts” is a good criterion to dete
 </p>
 
 <p><a href="http://www.cs.bilkent.edu.tr/%7Ecanf/publications/CoDet%20CIKM%202011.pdf">CoDet: Sentence-based Containment Detection in News Corpora</a></p>
-
+<p>
+  Main idea of this paper is to introduce a sentence-based containment detection method which is suitable for streaming news articles. There are several methods that use different similarity measures to find the near duplicate documents. Some of these methods include using all of the words in the documents, some include using a sequence of each word. 
+  Shingling can be given as an example to the latter approach. If two documents have common shingles above a threshold, they can be considered as near duplicates (similar). 
+  According to this paper, shingling used approaches suffer from efficiency issues, it is because of comparing each shingle of a document with shingles of other documents in the dataset.
+  A unique similarity measure called Containment Similarity (CS) is used in the algorithm described in this paper. CS measures to what extent document_a is contained by document_d by using the set of sentences in those documents and inverse document frequency of the longest word prefix match of the sentences in the sets. 
+  As the word prefix match of the sentences gets longer, similarity between these sentences increases.
+  Corpus tree structure is used for processing and calculating the CS of the sentences of documents in the dataset. CoDet determines the containment of two documents by using the ratio between CS of two documents efficiently and effectively.
+</p>
 <p><a href="http://www2007.cpsc.ucalgary.ca/papers/paper215.pdf">Detecting Near-duplicates for Web Crawling</a></p>
 
 <p><a href="http://ir.cs.georgetown.edu/publications/downloads/p171-chowdhury.pdf">Collection Statistics for Fast Duplicate Document Detection</a></p>
