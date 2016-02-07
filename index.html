@@ -54,15 +54,12 @@ According to the authors, the indexing structure they use makes their algorithm 
 </p>
 
 <p><a href="http://www2013.wwwconference.org/proceedings/p1273.pdf">Groundhog Day: Near-Duplicate Detection on Twitter</a></p>
-<p> Tweet pairs include following features:
-<p>	<b> Syntactic features: </b>  
-Manhattan Distance, overlap in terms of tweets, in hash tags, URLs, tweet length difference </p>
-<p> <b>	Semantic features: </b>  
-Overlap in entities, entity types, topics (using DBpedia Spotlight and OpenCalais), WordNet concepts and WordNet similarity </p>
-<p> <b>	Enriched Semantic Features </b> are constructed as in the same way as semantic features, but it also includes contents of web sites that are linked from the tweets.</p>
-<p> <b>	Contextual Features: </b> 
-Temporal difference between tweet pairs, user similarity (the differences in #followers and #followees) </p>
-<p>
+<p> In this article, Tweet pairs are examined by using following features:
+Syntactic features: Manhattan Distance, overlap in terms of tweets, in hash tags, URLs, tweet length difference
+Semantic features: Overlap in entities, entity types, topics (using DBpedia Spotlight and OpenCalais), WordNet concepts and WordNet similarity 
+Enriched Semantic Features are constructed as in the same way as semantic features, but it also includes contents of web sites that are linked from the tweets.
+Contextual Features:  
+Temporal difference between tweet pairs, user similarity (the differences in #followers and #followees)
 WordNet is a large lexical database of English. Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept. The authors identified nouns in the pairs of tweets and calculated their overlap in these nouns by using Java Wordnet Interface to find the root concepts of the nouns in the tweet pairs.
 It is stated that, “overlap of WordNet concepts” is a good criterion to detect duplicate tweets compared to other features. </p>
 </p>
