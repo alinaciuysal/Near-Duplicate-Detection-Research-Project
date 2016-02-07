@@ -49,8 +49,8 @@
 <p>The Semantic Web provides a common framework that allows data to be shared and reused across application, enterprise, and community boundaries. 
 Meta-data of resources (news articles, blog postings etc.) are stored in RDF (Resource Description Framework) format. Calais Web Service can extract following information from resources:
 Entities, relationships, facts, events, and topics. Calais Web Service then processes the information extracted from the text and returns semantic metadata in RDF format.
-The RDF structure of news articles are stored in a graph structure in this article. Locality Sensitive Hashing (LSH) and Jaccard Coefficient is applied to find the similarities of these graphs in order not to do pairwise comparisons 
-According to the authors, the indexing structure they use makes their algorithm more efficient.
+The RDF structure of news articles are stored in a graph structure in this article. Locality Sensitive Hashing (LSH) and Jaccard Coefficient is applied to find the similarities of these graphs in order not to do pairwise comparisons. 
+The indexing structure also makes their algorithm more efficient.
 </p>
 
 <p><a href="http://www2013.wwwconference.org/proceedings/p1273.pdf">Groundhog Day: Near-Duplicate Detection on Twitter</a></p>
@@ -73,6 +73,14 @@ It is stated that, “overlap of WordNet concepts” is a good criterion to dete
   Corpus tree structure is used for processing and calculating the CS of the sentences of documents in the dataset. CoDet determines the containment of two documents by using the ratio between CS of two documents efficiently and effectively.
 </p>
 <p><a href="http://www2007.cpsc.ucalgary.ca/papers/paper215.pdf">Detecting Near-duplicates for Web Crawling</a></p>
+<p>
+  According to this paper, two web documents can be identical in terms of their contents but they can differ in a small portion, such as advertisements, counters and timestamps. These differences are irrelevant for web search. Elimination of near duplicate documents saves network bandwith, reduces storage costs and improves the quality of search indexes.
+  The algorithm presented in this paper uses Charikar’s SimHash algorithm, which is useful for identifying near duplicates in web documents belonging to a multi-billion page repository. SimHash is a fingerprinting technique that depends on the following property: near duplicate documents differ in a small number of bit positions. 
+  The authors also develop a technique for finding all fingerprints that differ from a given fingerprint in at most k bit positions in a collection of f-bit fingerprints (Hamming Distance Problem). 
+  Their first algorithm works as follows: documents are converted into a set of features, which are tagged with its weight; using tokenization, stop-word removal, stemming, and phrase detection techniques. Each feature is hashed into an f-bit hash value. These f bits increment or decrement the weight of that feature according to the bit value of i-th bit. For instance, if the i-th bit of the hash value is 0, the i-th component of f-dimensional vector is decremented by the weight of that feature. The signs of the components after all features have been processed, determine the corresponding bits of the final fingerprint.
+  The authors try to address the problem for determining similar documents with similar hash values, contrary to the cryptographic hash functions such as SHA-1 or MD5. These hash functions are chosen for the property that slightly different inputs have potentially very different outputs, which makes SimHash unique.
+  It is stated that, their algorithm works best when their fingerprints differ in at most 3 bits. The distributions of fingerprints are also analysed by the authors. 
+</p>
 
 <p><a href="http://ir.cs.georgetown.edu/publications/downloads/p171-chowdhury.pdf">Collection Statistics for Fast Duplicate Document Detection</a></p>
 
