@@ -90,14 +90,19 @@ It is stated that, “overlap of WordNet concepts” is a good criterion to dete
 </p>
 <p>
   To group the tweets in our own dataset, I will be using Polyglot Python library, which can be found at: <a href="http://polyglot.readthedocs.org/en/latest/">polyglot.readthedocs.org/en/latest/</a>
-  <p>Algorithm of this tool is explained in the following paper: </p>
-  <p><a href="http://acberg.com/bigdata/papers/broder_shingling.pdf">Building Sentiment Lexicons for All Major Languages</a></p>
+</p>
+
+<p><a href="http://www.cs.bilkent.edu.tr/~canf/bilir_web/theses/erkanUyarThesis.pdf">Near-Duplicate News Detection Using Named Entities</a></p>
+<p>
+  Uyar et al. developed an algorithm called Tweezer to create document signatures using Inverse Document Frequency values of terms that are in news articles. It is stated that, Tweezer is better than I-Match algorithm in terms of effectiveness and efficiency. 
+  It is more effective than I-Match by using a cost function that combines false alarm and miss rate probabilities, it is also 7% faster than I-Match in terms of efficiency. The signature creation algorithm is based on the following structure: prefix-NamedEntity-suffix. It is stated that, using only named entities will not perform good enough in detecting near-duplicates because of false positive rates. 
+  They also use Shingling approach to create shingles of signatures, and SHA1 hash function to hash shingles of documents and relate them with those documents. 
+  To detect near-duplicates, they compare hashes of a news article with hashes of other news articles. Similarity between two news aticles increases as the number of same hashes between two news articles increase.
 </p>
 
 <p><a href="http://alt.qcri.org/semeval2015/cdrom/index.html">Sem-Eval-2015 Task 1: Paraphrase and Semantic Similarity in Twitter (PIT)</a></p>
 <p>In this task above, 19 teams developed different algorithms for detecting semantic similarity of tweets in a given dataset. First two of the best algorithms (according to Pearson correlation scores) are: ASOBEK and RTM-DCU systems. </p>
-<p><a href="http://www.aclweb.org/anthology/S15-2011">ASOBEK: Twitter Paraphrase Identification with Simple Overlap Features and SVMs</a></p>
-<p><a href="http://www.aclweb.org/anthology/S15-2010">RTM-DCU: Predicting Semantic Similarity with Referential Translation Machines</a></p>
+
 
 <h2>
 <a id="meetings" class="anchor" href="#meetings" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Meetings</h2>
@@ -111,7 +116,11 @@ It is stated that, “overlap of WordNet concepts” is a good criterion to dete
 <p>7) March 1, 2016 in EA511: New algorithms for proper dataset creation are discussed with Fazlı Can and Çağrı Toraman. </p>
 <p>8) March 8, 2016 in EA511: Details of Tubitak dataset, which includes tweets that are seperated according to their languages with the help of Polyglot Library, are discussed.</p>
 <p>9) March 18, 2016 in EA507: Different approaches to use semantic features of tweets are discussed with Çağrı Toraman and Fazlı Can.</p>
-
+<p>10) March 30, 2016 in EA507: Pre-processing stages, stemming stages, and 3 different algorithms to detect near-duplicate Turkish tweets are discussed with Çağrı Toraman. First one uses Google search engine queries to detect the relevancy between two words of tweets.
+    Second one is an algorithm that uses a social network that is based on a graph structure, and the last one is about finding WordNet concepts in tweets after translating words in Turkish tweets to English, where we will use 4 different semantic features to detect near-duplicate English tweets in our dataset.
+</p>
+<p>11) April 6, 2016 in the campus with Fazlı Can: Current situation of this research project, results of SimHash algorithm, dataset generation algorithm, pre-processing stages in Turkish tweets,  problems in parsing Turkish Wikipedia articles to generate above-mentioned graph structure are discussed with Fazlı Can. 
+He also suggested using windowing approaches in order to reduce the time required to detect near-duplicate Turkish tweets in our dataset because pairing every tweet will result in approximately 8 billion tweet pairs. </p>
 <h2>
 <a id="quick-links" class="anchor" href="#quick-links" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quick Links</h2>
 
